@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IQueryable<Project>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Oh hey there. Everything was working correctly until I got to the displaying the database data. I tried dotnet ef migrations remove and other commands that Prof. Hilton went through in the videos, but they all came back with "Build failed" errors. </p>
+</div>
+@foreach (var x in Model)
+{
+    <div>
+        <h3>@x.BookTitle</h3>
+        <p>Author: @x.AuthLName, @x.AuthFName</p>
+        <p>Publisher: @x.Publisher</p>
+        <p>ISBN: @x.ISBN</p>
+        <p>Catergory: @x.BookCat</p>
+        <p>Price: $@x.BookPrice</p>
+    </div>
+}
