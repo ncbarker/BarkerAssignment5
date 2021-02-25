@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using BarkerAssignment5.Models.ViewModels;
 
 namespace BarkerAssignment5.Controllers
 {
@@ -13,16 +14,39 @@ namespace BarkerAssignment5.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        private readonly iBookStoreRepository _repository;
-        public HomeController(ILogger<HomeController> logger, iBookStoreRepository repository)
+        //Private variable for the book store repository
+        private  IBookStoreRepository _repository;
+
+        //Variable to only show 5 items per page
+        public int PageSize = 5;
+        public HomeController(ILogger<HomeController> logger, IBookStoreRepository repository)
         {
             _logger = logger;
             _repository = repository;
         }
-
-        public IActionResult Index()
+        //Result for the Index page
+        public IActionResult Index(int page = 1)
         {
-            return View(_repository.Projects);
+            //Only show 5 items per page
+            return View(new BookListViewModel
+            {
+                Projects = _repository.Projects
+                    .OrderBy(p => p.BookId)
+                    .Skip((page - 1) * PageSize)
+                    .Take(PageSize),
+
+                PagingInfo =  new PagingInfo
+                {
+                    CurrentPage = page,
+                    ItemsPerPage = PageSize,
+                    TotalNumItems = _repository.Projects.Count()
+
+                }
+                
+            });
+                
+                
+                
         }
 
         public IActionResult Privacy()

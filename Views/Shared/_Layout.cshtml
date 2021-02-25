@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+    <div>
+        <span class="bg-dark text-white p-2">
+            Online Book Store
+        </span>
+    </div>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -29,11 +34,17 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="row m-1 p-1">
+        <div id="blah" class="col-3">
+            <h1>Look at these neato books.</h1>
+        </div>
+        <div class="container col-8">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
+    
 
     <footer class="border-top footer text-muted">
         <div class="container">

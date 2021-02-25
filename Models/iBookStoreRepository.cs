@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BarkerAssignment5.Models
 {
-    public interface iBookStoreRepository
+    public interface IBookStoreRepository
     {
         IQueryable<Project> Projects { get; }
     }

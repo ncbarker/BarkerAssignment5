@@ -30,13 +30,13 @@ namespace BarkerAssignment5
 
             services.AddDbContext<BookStoreDbContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:OnlineBookStore"]);
+                options.UseSqlite(Configuration["ConnectionStrings:OnlineBookStore"]);
             });
 
-            services.AddScoped<iBookStoreRepository, EFBookStoreRepository>();
+            services.AddScoped<IBookStoreRepository, EFBookStoreRepository>();
         }
 
-        private Action<SqlServerDbContextOptionsBuilder> GetConnectionString(string v)
+        private Action<SqliteDbContextOptionsBuilder> GetConnectionString(string v)
         {
             throw new NotImplementedException();
         }
@@ -60,12 +60,15 @@ namespace BarkerAssignment5
             app.UseRouting();
 
             app.UseAuthorization();
-
+            //Improving urls for user ease
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "pagination",
+                    "Books/P{page}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapDefaultControllerRoute();
             });
 
             SeedData.EnsurePopulated(app);

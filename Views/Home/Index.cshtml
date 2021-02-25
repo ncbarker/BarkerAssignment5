@@ -2,20 +2,32 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<Project>
+@model BookListViewModel
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Oh hey there. Everything was working correctly until I got to the displaying the database data. I tried dotnet ef migrations remove and other commands that Prof. Hilton went through in the videos, but they all came back with "Build failed" errors. Then choosing to try to delete the database I created, I could not find them. I have no idea what I did wrong.</p>
+    <p>Oh hey there.</p>
 </div>
-@foreach (var x in Model)
-{
-    <div>
-        <h3>@x.BookTitle</h3>
-        <p>Author: @x.AuthLName, @x.AuthFName</p>
-        <p>Publisher: @x.Publisher</p>
-        <p>ISBN: @x.ISBN</p>
-        <p>Catergory: @x.BookCat</p>
-        <p>Price: $@x.BookPrice</p>
-    </div>
-}
+<div>
+    @foreach (var x in Model.Projects)
+    {
+        <div class="card card-outline-primary m-1 p-1">
+            <div class="bg-dark text-white p-1">
+                <h3>@x.BookTitle</h3>
+                <p>Author: @x.AuthLName, @x.AuthFName</p>
+                <p>Publisher: @x.Publisher</p>
+                <p>ISBN: @x.ISBN</p>
+                <p>Catergory: @x.BookCat</p>
+                <p>Pages: @x.Pages</p>
+                <span class="badge badge-pill badge-light text-dark" style="float:right"><p>Price: $@x.BookPrice</p></span>
+            </div>
+        </div>
+    }
+</div>
+<!--This is the page model that we build in ViewImport-->
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+        page-class-normal="btn-outline-dark"
+        page-class-selected="btn-primary"
+        class="btn-group pull-right m-1">
+
+</div>

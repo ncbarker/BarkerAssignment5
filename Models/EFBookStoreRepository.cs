@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BarkerAssignment5.Models
 {
-    public class EFBookStoreRepository : iBookStoreRepository
+    public class EFBookStoreRepository : IBookStoreRepository
     {
         private BookStoreDbContext _context;
         

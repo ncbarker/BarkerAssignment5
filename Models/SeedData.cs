@@ -19,7 +19,7 @@ namespace BarkerAssignment5.Models
                 context.Database.Migrate();
             }
 
-            if(context.Projects.Any())
+            if(!context.Projects.Any())
             {
                 context.Projects.AddRange(
 
@@ -32,6 +32,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
                         BookCat = "Fiction, Classic",
+                        Pages = 1488,
                         BookPrice = 9.95
                     },
                     new Project
@@ -43,6 +44,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
                         BookCat = "Non-Fiction, Biography",
+                        Pages = 944,
                         BookPrice = 14.58
                     },
 
@@ -55,6 +57,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
                         BookCat = "Non-Fiction, Biography",
+                        Pages = 832,
                         BookPrice = 21.54
                     },
                     new Project
@@ -66,6 +69,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
                         BookCat = "Non-Fiction, Biography",
+                        Pages = 864,
                         BookPrice = 11.61
                     },
                     new Project
@@ -77,6 +81,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Random House",
                         ISBN = "978-0812974492",
                         BookCat = "NonFiction, Biography",
+                        Pages = 528,
                         BookPrice = 13.33
                     },
                     new Project
@@ -88,6 +93,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Vintage",
                         ISBN = "978-0804171281",
                         BookCat = "Fictional, Historical Fiction",
+                        Pages = 288,
                         BookPrice = 15.95
                     },
                     new Project
@@ -99,6 +105,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455586691",
                         BookCat = "Non-Fiction, Self-Help",
+                        Pages = 304,
                         BookPrice = 14.99
                     },
                     new Project
@@ -110,6 +117,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455523023",
                         BookCat = "Non-Fiction, Self-Help",
+                        Pages = 240,
                         BookPrice = 21.66
                     },
                     new Project
@@ -121,6 +129,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Portfolio",
                         ISBN = "978-1591847984",
                         BookCat = "Non-Fiction, Business",
+                        Pages = 400,
                         BookPrice = 29.16
                     },
                     new Project
@@ -132,8 +141,43 @@ namespace BarkerAssignment5.Models
                         Publisher = "Bantam",
                         ISBN = "978-0553393613",
                         BookCat = "Fiction, Thrillers",
+                        Pages = 642,
                         BookPrice = 15.03
+                    },
+                    new Project
+                    {
+                        BookTitle = "The Art of Gathering",
+                        AuthFName = "Priya",
+                        AuthLName = "Parker",
+                        Publisher = "Riverhead Books",
+                        ISBN = "978-1594634925",
+                        BookCat = "Non-Fiction",
+                        Pages = 304,
+                        BookPrice = 18.95
+                    },
+                    new Project
+                    {
+                        BookTitle = "Think Again",
+                        AuthFName = "Adam",
+                        AuthLName = "Grant",
+                        Publisher = "Penguin Random House",
+                        ISBN = "978-1984878106",
+                        BookCat = "Non-Fiction, Business",
+                        Pages = 307,
+                        BookPrice = 18.99
+                    },
+                    new Project
+                    {
+                        BookTitle = "Range",
+                        AuthFName = "David",
+                        AuthLName = "Epstein",
+                        Publisher = "Riverhead Books",
+                        ISBN = "978-0735214484",
+                        BookCat = "Non-Fiction, Self-help",
+                        Pages = 339,
+                        BookPrice = 14.95
                     }
+
 
                 );
 
