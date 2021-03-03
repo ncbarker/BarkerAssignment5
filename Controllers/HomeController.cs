@@ -25,12 +25,13 @@ namespace BarkerAssignment5.Controllers
             _repository = repository;
         }
         //Result for the Index page
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
             //Only show 5 items per page
             return View(new BookListViewModel
             {
                 Projects = _repository.Projects
+                    .Where(p => category == null || p.BookCat == category)
                     .OrderBy(p => p.BookId)
                     .Skip((page - 1) * PageSize)
                     .Take(PageSize),
@@ -41,7 +42,9 @@ namespace BarkerAssignment5.Controllers
                     ItemsPerPage = PageSize,
                     TotalNumItems = _repository.Projects.Count()
 
-                }
+                },
+                //Allow for filtering according to category
+                CurrentCategory = category
                 
             });
                 

@@ -60,9 +60,21 @@ namespace BarkerAssignment5
             app.UseRouting();
 
             app.UseAuthorization();
-            //Improving urls for user ease
+            //Improving urls for user ease- defining what we want the urls to look like
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1});
+
                 endpoints.MapControllerRoute(
                     "pagination",
                     "Books/P{page}",

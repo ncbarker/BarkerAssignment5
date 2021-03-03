@@ -11,17 +11,7 @@
 <div>
     @foreach (var x in Model.Projects)
     {
-        <div class="card card-outline-primary m-1 p-1" style="border-radius">
-            <div class="bg-dark text-white p-1" >
-                <h3>@x.BookTitle</h3>
-                <p>Author: @x.AuthLName, @x.AuthFName</p>
-                <p>Publisher: @x.Publisher</p>
-                <p>ISBN: @x.ISBN</p>
-                <p>Catergory: @x.BookCat</p>
-                <p>Pages: @x.Pages</p>
-                <span class="badge badge-pill badge-light text-dark" style="float:right"><p>Price: $@x.BookPrice</p></span>
-            </div>
-        </div>
+        <partial name="BookSummary" model="x" />
     }
 </div>
 <!--This is the page model that we build in ViewImport-->

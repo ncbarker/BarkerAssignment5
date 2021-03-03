@@ -20,6 +20,5 @@ namespace BarkerAssignment5.Models
         public double BookPrice { get; set; }
         public int Pages { get; set; }
         
-
     }
 }
