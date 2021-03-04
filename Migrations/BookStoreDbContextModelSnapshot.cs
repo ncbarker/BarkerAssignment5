@@ -30,6 +30,9 @@ namespace BarkerAssignment5.Migrations
                     b.Property<string>("BookCat")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("BookClass")
+                        .HasColumnType("TEXT");
+
                     b.Property<double>("BookPrice")
                         .HasColumnType("REAL");
 

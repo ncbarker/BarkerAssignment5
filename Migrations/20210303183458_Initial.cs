@@ -18,6 +18,7 @@ namespace BarkerAssignment5.Migrations
                     Publisher = table.Column<string>(nullable: true),
                     ISBN = table.Column<string>(nullable: true),
                     BookCat = table.Column<string>(nullable: true),
+                    BookClass = table.Column<string>(nullable: true),
                     BookPrice = table.Column<double>(nullable: false),
                     Pages = table.Column<int>(nullable: false)
                 },

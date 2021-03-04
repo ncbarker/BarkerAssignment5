@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarkerAssignment5.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    [Migration("20210225025957_Initial")]
+    [Migration("20210303183458_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -30,6 +30,9 @@ namespace BarkerAssignment5.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("BookCat")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("BookClass")
                         .HasColumnType("TEXT");
 
                     b.Property<double>("BookPrice")

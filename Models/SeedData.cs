@@ -31,7 +31,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Hugo",
                         Publisher = "Signet",
                         ISBN = "978-0451419439",
-                        BookCat = "Fiction, Classic",
+                        BookCat = "Fiction",
+                        BookClass = "Classic",
                         Pages = 1488,
                         BookPrice = 9.95
                     },
@@ -43,7 +44,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Goodwin",
                         Publisher = "Simon & Schuster",
                         ISBN = "978-0743270755",
-                        BookCat = "Non-Fiction, Biography",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Biography",
                         Pages = 944,
                         BookPrice = 14.58
                     },
@@ -56,7 +58,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Schroeder",
                         Publisher = "Bantam",
                         ISBN = "978-0553384611",
-                        BookCat = "Non-Fiction, Biography",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Biography",
                         Pages = 832,
                         BookPrice = 21.54
                     },
@@ -68,7 +71,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "White",
                         Publisher = "Random House",
                         ISBN = "978-0812981254",
-                        BookCat = "Non-Fiction, Biography",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Biography",
                         Pages = 864,
                         BookPrice = 11.61
                     },
@@ -80,7 +84,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Hillenbrand",
                         Publisher = "Random House",
                         ISBN = "978-0812974492",
-                        BookCat = "NonFiction, Biography",
+                        BookCat = "NonFiction",
+                        BookClass = "Biography",
                         Pages = 528,
                         BookPrice = 13.33
                     },
@@ -92,7 +97,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Crichton",
                         Publisher = "Vintage",
                         ISBN = "978-0804171281",
-                        BookCat = "Fictional, Historical Fiction",
+                        BookCat = "Fictional",
+                        BookClass = "Historical Fiction",
                         Pages = 288,
                         BookPrice = 15.95
                     },
@@ -104,7 +110,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Newport",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455586691",
-                        BookCat = "Non-Fiction, Self-Help",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Self-Help",
                         Pages = 304,
                         BookPrice = 14.99
                     },
@@ -116,7 +123,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Abrashoff",
                         Publisher = "Grand Central Publishing",
                         ISBN = "978-1455523023",
-                        BookCat = "Non-Fiction, Self-Help",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Self-Help",
                         Pages = 240,
                         BookPrice = 21.66
                     },
@@ -128,7 +136,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Branson",
                         Publisher = "Portfolio",
                         ISBN = "978-1591847984",
-                        BookCat = "Non-Fiction, Business",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Business",
                         Pages = 400,
                         BookPrice = 29.16
                     },
@@ -140,7 +149,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Grisham",
                         Publisher = "Bantam",
                         ISBN = "978-0553393613",
-                        BookCat = "Fiction, Thrillers",
+                        BookCat = "Fiction",
+                        BookClass = "Thriller",
                         Pages = 642,
                         BookPrice = 15.03
                     },
@@ -152,6 +162,7 @@ namespace BarkerAssignment5.Models
                         Publisher = "Riverhead Books",
                         ISBN = "978-1594634925",
                         BookCat = "Non-Fiction",
+                        BookClass = "Business",
                         Pages = 304,
                         BookPrice = 18.95
                     },
@@ -162,7 +173,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Grant",
                         Publisher = "Penguin Random House",
                         ISBN = "978-1984878106",
-                        BookCat = "Non-Fiction, Business",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Business",
                         Pages = 307,
                         BookPrice = 18.99
                     },
@@ -173,7 +185,8 @@ namespace BarkerAssignment5.Models
                         AuthLName = "Epstein",
                         Publisher = "Riverhead Books",
                         ISBN = "978-0735214484",
-                        BookCat = "Non-Fiction, Self-help",
+                        BookCat = "Non-Fiction",
+                        BookClass = "Self-Help",
                         Pages = 339,
                         BookPrice = 14.95
                     }

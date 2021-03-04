@@ -17,6 +17,7 @@ namespace BarkerAssignment5.Models
         //Put regular expression here for ISBN formatting
         public string ISBN { get; set; }
         public string BookCat { get; set; }
+        public string BookClass { get; set; }
         public double BookPrice { get; set; }
         public int Pages { get; set; }
         
