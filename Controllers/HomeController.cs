@@ -40,7 +40,8 @@ namespace BarkerAssignment5.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Projects.Count()
+                    TotalNumItems = category == null ? _repository.Projects.Count() :
+                        _repository.Projects.Where(x => x.BookCat == category).Count()
 
                 },
                 //Allow for filtering according to category

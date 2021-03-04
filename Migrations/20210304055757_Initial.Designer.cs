@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BarkerAssignment5.Migrations
 {
     [DbContext(typeof(BookStoreDbContext))]
-    [Migration("20210303183458_Initial")]
+    [Migration("20210304055757_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
