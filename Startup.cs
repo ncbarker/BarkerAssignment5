@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace BarkerAssignment5
 {
-    public class Startup
+    public class Startup 
     {
         public Startup(IConfiguration configuration)
         {
@@ -34,6 +34,12 @@ namespace BarkerAssignment5
             });
 
             services.AddScoped<IBookStoreRepository, EFBookStoreRepository>();
+
+            services.AddRazorPages();
+
+            //Services needed to allow cart items to remain in cart for entire user session
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         private Action<SqliteDbContextOptionsBuilder> GetConnectionString(string v)
@@ -56,6 +62,8 @@ namespace BarkerAssignment5
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            //Session to allow things to stay in cart 
+            app.UseSession();
 
             app.UseRouting();
 
@@ -64,23 +72,26 @@ namespace BarkerAssignment5
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("catpage",
-                    "{category}/{page:int}",
+                    "{category}/{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("page",
-                    "{page:int}",
+                    "{pageNum:int}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapControllerRoute("category",
                     "{category}",
-                    new { Controller = "Home", action = "Index", page = 1});
+                    new { Controller = "Home", action = "Index", pageNum = 1});
 
                 endpoints.MapControllerRoute(
                     "pagination",
-                    "Books/P{page}",
+                    "Books/P{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
+                                
             });
 
             SeedData.EnsurePopulated(app);

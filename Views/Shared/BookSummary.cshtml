@@ -17,4 +17,19 @@
         <p>Pages: @Model.Pages</p>
         <span class="badge badge-pill badge-light text-dark" style="float:right"><p>Price: $@Model.BookPrice</p></span>
     </div>
+    <div>
+        <!--Include the "add to cart" button-->
+        <!--These are hidden becuase we only need them to pass data-->
+        <form id="@Model.BookId" asp-page="/Purchase" method="post">
+            <input type="hidden" asp-for="BookId"/>
+            <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
+            <span class="card-text p-1">
+                @Model.BookTitle
+                <button type="submit" class="btn-success btn-sm pull-right" style="float:right">
+                    Add to cart
+                </button>
+            </span>
+
+        </form>
+    </div>
 </div>

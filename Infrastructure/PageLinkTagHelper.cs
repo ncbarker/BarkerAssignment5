@@ -55,7 +55,7 @@ namespace BarkerAssignment5.Infrastructure
             {
                 TagBuilder tag = new TagBuilder("a");
 
-                PageUrlValues["page"] = i;
+                PageUrlValues["pageNum"] = i;
 
                 tag.Attributes["href"] = urlHelper.Action(PageAction,PageUrlValues);
 

@@ -19,6 +19,7 @@ namespace BarkerAssignment5.Models
                 context.Database.Migrate();
             }
 
+            //Populate database with seed data
             if(!context.Projects.Any())
             {
                 context.Projects.AddRange(

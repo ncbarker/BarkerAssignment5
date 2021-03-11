@@ -10,13 +10,14 @@
     Home
 </a>
 
+<!--Add sort by category filter-->
 @foreach (string category in Model)
 {
     <a class="btn btn-block btn-outline-dark
        @(category == ViewBag.SelectedCategory ? "btn-primary" :"btn-outline-secondary")"
        asp-action="Index" asp-controller="Home"
        asp-route-category="@category"
-       asp-route-page ="1">
+       asp-route-pageNum ="1">
         @category
     </a>
 
