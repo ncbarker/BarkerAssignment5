@@ -41,5 +41,18 @@ namespace BarkerAssignment5.Pages
 
             return RedirectToPage(new { returnUrl = returnUrl });
         }
+
+        public IActionResult OnPostRemove(long bookId, string returnUrl)
+        {
+            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            
+            Cart.RemoveLine(Cart.Lines.First(cl => cl.Project.BookId == bookId).Project);
+
+            //Set json in session with updated cart
+            HttpContext.Session.SetJson("cart", Cart); 
+            
+            return RedirectToPage(new { returnUrl = returnUrl });
+        }
+
     }
 }
