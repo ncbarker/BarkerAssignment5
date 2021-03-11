@@ -6,12 +6,23 @@
     <title>@ViewData["Title"] - BarkerAssignment5</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <div>
         <span class="bg-dark text-white p-2">
             Online Book Store
         </span>
+    </div>
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">Online Book Store</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
     </div>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -37,7 +48,7 @@
     <div class="row m-1 p-1">
         <div id="blah" class="col-3">
             <h1>Look at these neato books.</h1>
-            <vc:navigation-menu/>
+            <vc:navigation-menu />
         </div>
         <div class="container col-8">
             <main role="main" class="pb-3">
@@ -45,7 +56,7 @@
             </main>
         </div>
     </div>
-    
+
 
     <footer class="border-top footer text-muted">
         <div class="container">
